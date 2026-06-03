@@ -1,0 +1,58 @@
+Tema 2
+
+1 - Donde puedo ejecutar javascript ?, justifique su respuesta. 
+    
+	a- Cliente 
+    b- Servidor
+    c- En todos lados 
+	Justificación: Principalmente, JavaScript corre en el navegador (Cliente), dándole vida a las páginas web. Sin embargo, gracias a tecnologías como Node.js, JavaScript también se puede ejecutar en el Servidor.
+
+
+2 - Explique detalladamente comentando el código que se hace en cada línea del siguiente código:
+
+	1.Creamos un modelo de Inteligencia Artificial vacío.
+	const modelo=tf.sequential();
+	2.Le agregamos una capa "densa" (neuronas conectadas entre sí). Tiene 1 sola neurona (units: 1) y recibe 1 solo dato de entrada (inputShape: [1]). 
+	modelo.add(tf.layers.dense({units:1, inputShape: [1]}));
+3.Preparamos el modelo para el entrenamiento. Le decimos cómo medir sus errores y cómo aprender de ellos para mejorar
+	modelo.compile({
+				loss: 'meanSquaredError',
+				optimizer: 'sgd' 
+	});
+4. Creamos el grupo de datos "X" (las entradas) en un formato que la IA entiende (Tensor). Son 6 números organizados en una columna de 6 filas.
+	const valores_x = tf.tensor2d([1, 2, 3, 5, 7, 9],[6,1]);
+5. Creamos el grupo de datos "Y" (las respuestas correctas que corresponden a cada X). También en una columna de 6 filas.
+	const valores_y = tf.tensor2d([2, 3, 4, 6, 8, 10],[6,1]);
+
+6. Iniciamos el entrenamiento de la IA usando los datos de entrada y salida. El modelo va a intentar adivinar la relación entre ellos repitiendo el proceso de práctica 110 veces (epochs: 110).
+	await modelo.fit(xs, ys, {epochs: 110});
+
+
+3 - Explique lo que permite hacer la función tf.tidy() y tf.dispose()
+
+tf.dispose(): Le dices específicamente al código: "Ya usé este dato, bórralo de la memoria ahora mismo".
+
+tf.tidy(): Envuelves un pedazo de código dentro de él, y todo lo que se cree ahí adentro que ya no se necesite, se limpia solo al terminar, excepto el resultado final que quieras conservar.
+
+
+4 - Podríamos decir que para entrenar un modelo, contamos con todos los datos existentes en el universo conocido ?, Justifique la respuesta
+ 
+   - si 
+   - no 
+
+
+Justificación: No, En el mundo real es imposible recolectar absolutamente todos los datos que existen. Lo que hacemos es tomar una muestra (un grupo pequeño pero representativo de datos). 
+
+5 - Se adjuntan dos archivos: un servidor sistema.js y un frontend index.html. 
+    hacer los ajustes necesarios para el el sistema funcione con la  Formula:  y = 2x + 8 
+	y el Backend en el Puerto 8088.
+    Agregar la Grafica de perdida del entrenamiento. 
+   
+
+6 - El alumno debe crear una página web simple (HTML, CSS y JavaScript) que convierta una cantidad 
+    de Pesos Argentinos (ARS) a Dólares Estadounidenses (USD) en tiempo real, 
+	usando el valor oficial del dólar.Para ello debe utilizar una API gratuita de internet.
+	
+	
+Entrega de ejercicios: Entregar una carpeta .zip con los dos archivos modificados y un README.md  que explique 
+                       cómo ejecutar el sistema. No incluir node_modules ni librerias extras solo los archivos con código fuente.	

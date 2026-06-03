@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio B1 - y = 2x + 8</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background: #0b1120;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 { font-size: 1.4rem; letter-spacing: .05em; color: #7dd3fc; margin-bottom: .4rem; text-align: center; }
+    .subtitle { font-size: .85rem; color: #666; margin-bottom: 2rem; text-align: center; }
+    .card {
+      background: #111c30; border: 1px solid #1e3a5f; border-radius: 8px;
+      padding: 2rem; width: 100%; max-width: 420px;
+      display: flex; flex-direction: column; gap: 1.2rem;
+    }
+    label { font-size: .8rem; color: #999; display: block; margin-bottom: .3rem; }
+    input[type="number"] {
+      width: 100%; padding: .6rem .8rem; background: #0b1120;
+      border: 1px solid #1e3a5f; border-radius: 4px;
+      color: #fff; font-family: inherit; font-size: 1rem;
+    }
+    input[type="number"]:focus { outline: none; border-color: #7dd3fc; }
+    .btn-group { display: flex; gap: .8rem; }
+    button {
+      flex: 1; padding: .65rem; border: none; border-radius: 4px;
+      font-family: inherit; font-size: .9rem; cursor: pointer;
+      font-weight: bold; letter-spacing: .04em; transition: opacity .15s;
+    }
+    button:hover  { opacity: .85; }
+    button:active { opacity: .7; }
+    #btn-train   { background: #1d4ed8; color: #fff; }
+    #btn-predict { background: #7dd3fc; color: #0b1120; }
+    #resultado {
+      font-size: 1rem; color: #86efac; min-height: 1.4rem;
+      text-align: center; border-top: 1px solid #1e3a5f; padding-top: .8rem;
+    }
+    .hint {
+      font-size: .75rem; color: #555; border: 1px dashed #1e3a5f;
+      border-radius: 4px; padding: .7rem .9rem; line-height: 1.6;
+    }
+    .hint strong { color: #7dd3fc; }
+  </style>
+</head>
+<body>
+  <h1>&#9881; Ejercicio B1 - Modelo Lineal</h1>
+  <p class="subtitle">El modelo aprende la formula <code>y = 2x + 8</code></p>
+
+  <div class="card">
+    <div>
+      <label>Paso 1 - Entrenamiento</label>
+      <div class="btn-group">
+        <button id="btn-train">Entrenar modelo</button>
+      </div>
+    </div>
+    <div>
+      <label for="input-x">Paso 2 - Ingresa un valor de X para predecir</label>
+      <input type="number" id="input-x" placeholder="Ej: 10" />
+    </div>
+    <div class="btn-group">
+      <button id="btn-predict">Predecir Y</button>
+    </div>
+    <div id="resultado">- Resultado aqui -</div>
+    <div class="hint">
+      <strong>Pistas para completar el codigo:</strong><br>
+      &bull; El backend corre en ?? <code>http://ip:puerto</code><br>
+      
+    </div>
+  </div>
+
+  <script>
+
+    const btnTrain   = document.getElementById('btn-train');
+    const btnPredict = document.getElementById('btn-predict');
+    const inputX     = document.getElementById('input-x');
+    const resultado  = document.getElementById('resultado');
+
+   
+    async function entrenar() {
+      // Escribe tu codigo aqui
+
+
+    }
+
+   
+    async function predecir() {
+      // Escribe tu codigo aqui
+
+
+    }
+
+    btnTrain.addEventListener('click',   entrenar);
+    btnPredict.addEventListener('click', predecir);
+  </script>
+</body>
+</html>
